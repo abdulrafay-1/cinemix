@@ -4,6 +4,7 @@ import MovieCard from './components/MovieCard'
 import useFetchApi from './hooks/useFetchApi'
 import SkeletonMovieCard from './components/SkeletonMovieCard'
 import Navbar from './components/Navbar'
+import HeroCarousel from './components/Crousel'
 
 const App = () => {
   const { data: popular, loading: popularLoading } = useFetchApi("/movie/popular");
@@ -15,6 +16,9 @@ const App = () => {
   return (
     <div className='bg-black'>
       <Navbar />
+      <div className='mt-3'>
+        <HeroCarousel />
+      </div>
       <div>
         <div className="p-4 overflow-x-auto scrollbar-hide">
           <h2 className='text-3xl text-white font-medium mb-4'>Popular Movies</h2>
