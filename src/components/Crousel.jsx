@@ -21,12 +21,20 @@ const HeroCarousel = () => {
         <div className="relative w-full h-[60vh] md:h-[80vh]">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
-                navigation
-                pagination={{ clickable: true }}
+                navigation={{
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev"
+                }} pagination={{ clickable: true }}
                 autoplay={{ delay: 5000 }}
                 loop
-                className="h-full"
+                className="h-full relative"
             >
+                <button className="custom-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer text-red-500 text-3xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button className="custom-next absolute right-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer text-red-500 text-3xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
                 {popularMovies.results.slice(0, 5).map((movie) => (
                     <SwiperSlide key={movie.id}>
                         <div
