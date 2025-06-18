@@ -52,7 +52,7 @@ const Navbar = () => {
 
     return (
         <div className="flex justify-center items-center w-full">
-            <h1 className="text-center flex items-center justify-center text-4xl md:text-5xl font-extrabold tracking-wider pt-3 text-white drop-shadow-[0_2px_4px_rgba(255,0,0,0.7)]">
+            <h1 className="text-center flex items-center justify-center text-3xl md:text-5xl font-extrabold tracking-wider pt-3 text-white drop-shadow-[0_2px_4px_rgba(255,0,0,0.7)]">
                 <span>🎬</span><span className="text-red-600">Cine</span><span className="text-white">mix</span>
             </h1>
 
@@ -72,11 +72,11 @@ const Navbar = () => {
                         onChange={e => setSearchInput(e.target.value)}
                         className="bg-gray-900 placeholder:text-gray-400 mx-2 mt-5 focus:w-[200px] md:focus:w-[268px] transition-all ease-in-out duration-500 border-gray-400 border rounded-md px-2 py-2 pl-8 focus:outline-none text-gray-300 w-44 md:w-[200px]"
                     />
-                    {loading && <div className='absolute'>
+                    {loading && <div className='absolute z-10'>
                         <div className='flex flex-col gap-2'>
                             <SearchCard title={`loading`} img={`loading`} />
                         </div></div>}
-                    {!!searchData?.length && <div className="absolute right-2">
+                    {!!searchData?.length && <div className="absolute z-10 right-2">
                         <div className='overflow-y-auto scrollbar-hide max-h-[300px] p-3 bg-gray-900 rounded-md' >
                             <div className='flex flex-col gap-2'>
                                 {searchData.map(item => <SearchCard key={item.id} id={item.id} title={item.title} img={item.poster_path} />)}

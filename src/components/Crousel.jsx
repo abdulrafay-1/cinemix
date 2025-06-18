@@ -18,7 +18,7 @@ const HeroCarousel = () => {
     }
 
     return (
-        <div className="relative w-full h-[80vh]">
+        <div className="relative w-full h-[60vh] md:h-[80vh]">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
@@ -31,19 +31,19 @@ const HeroCarousel = () => {
                     <SwiperSlide key={movie.id}>
                         <div
                             className="w-full h-full bg-cover bg-center relative" style={{
-                                backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 100%), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+                                backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 100%), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
                             }}
                         >
                             <div className="absolute inset-0 flex items-center justify-start px-10">
                                 <div className="text-white max-w-xl space-y-4">
                                     <h1 className="text-4xl md:text-5xl font-bold">{movie.title}</h1>
-                                    <p className="text-gray-300 hidden md:block">
+                                    <p className="text-gray-300 md:block">
                                         {movie.overview}
                                     </p>
                                     <div className="flex items-center gap-4">
                                         <button
                                             onClick={() => navigate(`/movie/${movie.id}`)}
-                                            className="mt-4 px-5 py-2 bg-red-600 hover:bg-red-700 rounded-md text-white font-semibold"
+                                            className="px-5 py-2 bg-red-600 hover:bg-red-700 rounded-md text-white font-semibold"
                                         >
                                             View Details
                                         </button>
