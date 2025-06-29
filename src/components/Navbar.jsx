@@ -22,7 +22,6 @@ const Navbar = () => {
     }, [searchInput]);
 
     useEffect(() => {
-        console.log(debouncedSearchInput)
         const searchMovies = async () => {
             if (debouncedSearchInput.trim()) {
                 setSearchData([])
